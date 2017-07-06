@@ -17,8 +17,6 @@ class BottlesTest extends TestCase
     /** @test */
     public function it_can_sing_verse_number_99()
     {
-       $this->markTestSkipped();
-
         $expected = "99 bottles of beer on the wall, " .
             "99 bottles of beer.\n" .
             "Take one down and pass it around, " .
@@ -30,8 +28,6 @@ class BottlesTest extends TestCase
     /** @test */
     public function it_can_sing_verse_number_3()
     {
-        $this->markTestSkipped();
-
         $expected = "3 bottles of beer on the wall, " .
             "3 bottles of beer.\n" .
             "Take one down and pass it around, " .
@@ -43,8 +39,6 @@ class BottlesTest extends TestCase
     /** @test */
     public function it_can_sing_verse_89()
     {
-        $this->markTestSkipped();
-
         $expected = "89 bottles of beer on the wall, " .
             "89 bottles of beer.\n" .
             "Take one down and pass it around, " .
@@ -56,8 +50,6 @@ class BottlesTest extends TestCase
     /** @test */
     public function it_can_sing_verse_2()
     {
-        $this->markTestSkipped();
-
         $expected = "2 bottles of beer on the wall, " .
             "2 bottles of beer.\n" .
             "Take one down and pass it around, " .
@@ -69,8 +61,6 @@ class BottlesTest extends TestCase
     /** @test */
     public function it_can_sing_verse_1()
     {
-        $this->markTestSkipped();
-
         $expected = "1 bottle of beer on the wall, " .
             "1 bottle of beer.\n" .
             "Take it down and pass it around, " .
@@ -82,8 +72,6 @@ class BottlesTest extends TestCase
     /** @test */
     public function it_can_sing_verse_0()
     {
-        $this->markTestSkipped();
-
         $expected = "No more bottles of beer on the wall, " .
             "no more bottles of beer.\n" .
             "Go to the store and buy some more, " .
@@ -95,8 +83,6 @@ class BottlesTest extends TestCase
     /** @test */
     public function it_can_sing_a_couple_of_verses()
     {
-        $this->markTestSkipped();
-
         $expected = "99 bottles of beer on the wall, " .
             "99 bottles of beer.\n" .
             "Take one down and pass it around, " .
@@ -107,7 +93,7 @@ class BottlesTest extends TestCase
             "Take one down and pass it around, " .
             "97 bottles of beer on the wall.\n";
 
-        $this->assertEquals($expected, $this->bottles->verse(99, 98));
+        $this->assertEquals($expected, $this->bottles->verses(99, 98));
 
 
     }
@@ -115,8 +101,6 @@ class BottlesTest extends TestCase
     /** @test */
     public function it_can_sing_a_few_verses()
     {
-        $this->markTestSkipped();
-
         $expected = "2 bottles of beer on the wall, " .
             "2 bottles of beer.\n" .
             "Take one down and pass it around, " .
@@ -132,14 +116,12 @@ class BottlesTest extends TestCase
             "Go to the store and buy some more, " .
             "99 bottles of beer on the wall.\n";
 
-        $this->assertEquals($expected, $this->bottles->verse(2, 0));
+        $this->assertEquals($expected, $this->bottles->verses(2, 0));
     }
 
     /** @test */
     public function the_whole_song()
     {
-        $this->markTestSkipped();
-
         $expected = <<<EOT
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
@@ -440,8 +422,9 @@ Take it down and pass it around, no more bottles of beer on the wall.
 
 No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
+
 EOT;
 
-        $this->assertEquals($expected, $this->bottles->verse(99, 0));
+        $this->assertEquals($expected, $this->bottles->song());
     }
 }
